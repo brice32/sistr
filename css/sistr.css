@@ -1,0 +1,47 @@
+/* 
+    Created on : 7 oct. 2016, 09:02:24
+    Author     : wangy
+*/
+#nav-accueil{
+    background-color: #3E3D88;
+}
+#temoignage{
+    background-color: #9E593F;
+}
+#pied-de-page{
+    background-color: #7A3466;
+}
+.conteneur{
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#connexion{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 172px;
+    border-left:1px solid gainsboro;
+
+}
+#connexion input{
+    width: 250px;
+    border: 1px solid #3E3D88;
+    background-color: transparent;
+    display: block;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+#connexion button{
+    border: none;
+    background-color: #692F7A;
+    color: white;
+    padding: 8px;
+    border-radius: 5px 5px;
+}
+#header-accueil div > *{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+}
