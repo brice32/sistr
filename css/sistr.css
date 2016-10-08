@@ -2,9 +2,23 @@
     Created on : 7 oct. 2016, 09:02:24
     Author     : wangy
 */
+body *{
+    font-family: "Roboto", sans-serif;//无衬线的字体
+    font-weight: 100;
+    font-size: 14px;
+}
 #nav-accueil{
     background-color: #3E3D88;
+    text-align: center;
+    line-height: 80px;
+    text-transform: uppercase;
+    
 }
+#nav-accueil li+li::before{
+    content: " | ";
+    color: white;
+}
+
 #temoignage{
     background-color: #9E593F;
 }
@@ -39,9 +53,17 @@
     padding: 8px;
     border-radius: 5px 5px;
 }
-#header-accueil div > *{
+#connexion > *{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 20px;
+    margin:0 20px;
+}
+#nav-accueil a{
+    color: #ffffff;
+    font-size: 1.3em;
+    text-decoration: none;//无下划线的连接
+}
+#nav-accueil li{
+    display: inline-block;
 }
