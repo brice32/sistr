@@ -3,7 +3,7 @@
     Author     : wangy
 */
 body *{
-    font-family: "Roboto", sans-serif;//无衬线的字体
+    font-family: "Roboto", sans-serif;
     font-weight: 100;
     font-size: 14px;
 }
@@ -66,4 +66,50 @@ body *{
 }
 #nav-accueil li{
     display: inline-block;
+}
+#bienvenue{         
+    background-image: url('/sistr/images/bamboo-blured.jpg');
+    background-position: left;
+    height: auto;
+    background-size: cover;
+}
+#bienvenue h2{
+    position: relative;
+    padding-top: 160px;
+    padding-left: 100px;
+    padding-bottom: 80px;
+    font-size: 4em;
+    color: white;
+    text-transform: uppercase;
+}
+#derniers-suivis h3{
+    color: #3E3D88;
+    font-size: 2em;
+    text-align: center;
+    margin: 80px auto;
+}
+#derniers-suivis table{
+    margin: 0px auto 80px auto;
+    width: 90%;
+    line-height: 40px;
+}
+#derniers-suivis tr+tr{
+    border-top: #DDDDDD solid 1px;
+}
+#derniers-suivis td:first-child{
+    font-size: 1.5em;
+    color: #AAAAAA;
+    font-weight: 400;
+}
+#derniers-suivis td+td{
+    font-size: 1.5em;
+    font-weight: 100;
+    color: #AAAAAA;
+    width: 100px;
+    padding-right: 20px;
+    text-align: right;
+}
+#derniers-suivis td+td+td{
+    padding-right: 0px;
+    text-align: right;
 }
