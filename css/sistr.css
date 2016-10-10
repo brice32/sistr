@@ -113,3 +113,26 @@ body *{
     padding-right: 0px;
     text-align: right;
 }
+#temoignage{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: white;
+}
+i{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+#temoignage p{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+.bloc33{
+    width: 33%;
+    float: left;
+    
+}
