@@ -22,9 +22,6 @@ body *{
 #temoignage{
     background-color: #9E593F;
 }
-#pied-de-page{
-    background-color: #7A3466;
-}
 .conteneur{
     width: 960px;
     margin-right: auto;
@@ -118,7 +115,7 @@ body *{
     padding-bottom: 80px;
     color: white;
 }
-i{
+#temoignage i{
     margin-bottom: 20px;
     width: 100%;
     text-align: center;
@@ -132,7 +129,42 @@ i{
     line-height: 1.5em;
 }
 .bloc33{
-    width: 33%;
+    width: 300px;
+    margin: 0 10px 0 10px;
     float: left;
-    
+}
+.clear{
+    clear: left;
+}
+#description{
+    padding-top: 80px;
+}
+#description h3{
+    color: #692F7A;
+    font-size: 5em;
+}
+#description span{
+    margin-top: 20px;
+    font-size: 0.5em;
+    display:block;
+}
+#description p{
+    font-size: 1.4em;
+    line-height: 1.8em;
+    margin-top: 20px;
+}
+#description .bloc33{
+    box-shadow: 0 0 1px rgba(0,0,0,0);
+    background-color: white;
+    transition: all 1s ease;
+    transition-property: box-shadow, background-color;
+}
+#description .bloc33:hover{
+    background-color: #EEEEEE;
+    border-radius: 10px 10px;
+    box-shadow: 0 20px 10px -10px rgba(0,0,0,0.2);
+}
+#pied-de-page{
+    margin-top: 80px;
+    background-color: #7A3466;
 }
