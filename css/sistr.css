@@ -167,4 +167,23 @@ body *{
 #pied-de-page{
     margin-top: 80px;
     background-color: #7A3466;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#pied-de-page p{
+    font-size: 0.8em;
+    margin-bottom: 40px;
+}
+#pied-de-page h4{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+#pied-de-page li{
+        line-height: 1.8em;
+        font-size: 0.8em;
+}
+#pied-de-page a{
+    color: white;
+    text-decoration: none;//无下划线的连接
 }
