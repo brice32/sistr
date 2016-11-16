@@ -1,4 +1,3 @@
 <?php
 define('F3IL','');
-defined('SECURITE');
-echo 'Framework F3iL';
+require_once '/framework/page.php';

@@ -1,5 +1,6 @@
 <?php
-    defined('SISTR') or die('Acces interdit');
+defined('SISTR') or die('Acces interdit');
+defined('F3IL') or die('Acces Interdit');
 ?>
 <!DOCTYPE>
 <html>
@@ -37,18 +38,19 @@
     <body>
         <header>
             <h1>Template A</h1>
-            <p><?php echo __FILE__;?></p>
+            <p><?php echo __FILE__; ?></p>
         </header>
         <nav>
             <p>Navigation</p>
         </nav>
         <main>
             <section>
-                <!-- Afffichage de la vue -->                
+                <!-- Afffichage de la vue -->       
+                <?php $this->insertView(); ?> 
             </section>
             <aside>
                 Aside
             </aside>
-        </main>
+        </main>  
     </body>
 </html>
