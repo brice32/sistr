@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82a26aa9-f7ad-404c-bd9d-266c477b25de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/framework/error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/configuration.ini" afterPath="$PROJECT_DIR$/application/configuration.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.html" afterPath="$PROJECT_DIR$/application/controllers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/utilisateur.controller.php" afterPath="$PROJECT_DIR$/application/controllers/utilisateur.controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/forms/html/index.html" afterPath="$PROJECT_DIR$/application/forms/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/forms/index.html" afterPath="$PROJECT_DIR$/application/forms/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/helpers/index.html" afterPath="$PROJECT_DIR$/application/helpers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index.html" afterPath="$PROJECT_DIR$/application/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/index.html" afterPath="$PROJECT_DIR$/application/models/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/templates/index.html" afterPath="$PROJECT_DIR$/application/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/templates/simple.template.php" afterPath="$PROJECT_DIR$/application/templates/simple.template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/templates/template-a.template.php" afterPath="$PROJECT_DIR$/application/templates/template-a.template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/templates/template-b.template.php" afterPath="$PROJECT_DIR$/application/templates/template-b.template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index.html" afterPath="$PROJECT_DIR$/application/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/vue1.view.php" afterPath="$PROJECT_DIR$/application/views/vue1.view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/vue2.view.php" afterPath="$PROJECT_DIR$/application/views/vue2.view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.html" afterPath="$PROJECT_DIR$/css/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/reset.css" afterPath="$PROJECT_DIR$/css/reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/sistr.css" afterPath="$PROJECT_DIR$/css/sistr.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fonts/index.html" afterPath="$PROJECT_DIR$/fonts/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/F3il.php" afterPath="$PROJECT_DIR$/framework/F3il.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/application.php" afterPath="$PROJECT_DIR$/framework/application.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/configuration.php" afterPath="$PROJECT_DIR$/framework/configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/errors/index.html" afterPath="$PROJECT_DIR$/framework/errors/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/helpers/index.html" afterPath="$PROJECT_DIR$/framework/helpers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/index.html" afterPath="$PROJECT_DIR$/framework/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/page.php" afterPath="$PROJECT_DIR$/framework/page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/index.html" afterPath="$PROJECT_DIR$/images/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.html" afterPath="$PROJECT_DIR$/js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maquette-accueil.html" afterPath="$PROJECT_DIR$/maquette-accueil.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maquette-application.html" afterPath="$PROJECT_DIR$/maquette-application.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/index.html" afterPath="$PROJECT_DIR$/nbproject/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/private/index.html" afterPath="$PROJECT_DIR$/nbproject/private/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/apparence.php" afterPath="$PROJECT_DIR$/temp/apparence.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/classe.php" afterPath="$PROJECT_DIR$/temp/classe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/form.html" afterPath="$PROJECT_DIR$/temp/form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/groupe.php" afterPath="$PROJECT_DIR$/temp/groupe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/index.html" afterPath="$PROJECT_DIR$/temp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/index.php" afterPath="$PROJECT_DIR$/temp/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/ini.php" afterPath="$PROJECT_DIR$/temp/ini.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/magique.php" afterPath="$PROJECT_DIR$/temp/magique.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/singleton.php" afterPath="$PROJECT_DIR$/temp/singleton.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/test.php" afterPath="$PROJECT_DIR$/temp/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp/utilisateur.php" afterPath="$PROJECT_DIR$/temp/utilisateur.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendors/index.html" afterPath="$PROJECT_DIR$/vendors/index.html" />
-    </list>
+    <list default="true" id="82a26aa9-f7ad-404c-bd9d-266c477b25de" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -400,16 +350,16 @@
       <workItem from="1480325271890" duration="1722000" />
       <workItem from="1480328846772" duration="229000" />
       <workItem from="1480329258530" duration="975000" />
-      <workItem from="1480336589230" duration="13920000" />
+      <workItem from="1480336589230" duration="14028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17093000" />
+    <option name="totallyTimeSpent" value="17201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16328125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
