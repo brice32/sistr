@@ -1,4 +1,5 @@
 <?php
+namespace Sistr;
 defined('SISTR') or die('Acces interdit');
 defined('F3IL') or die('Acces Interdit');
 ?>

@@ -1,4 +1,5 @@
 <?php
+namespace F3il;
 
 defined('F3IL') or die('Acces Interdit');
 
@@ -7,7 +8,20 @@ class Page {
     protected $templateFile;
     protected $viewFile;
     protected $data= array();
+    private static $_instance;
+        
+        private function __construct() {
+        
+    }
 
+    public static function getInstance() {
+        if (is_null(self::$_instance)) {
+            self::$_instance = new Page();
+        }
+        return self::$_instance;
+    }
+
+    
     public function setTemplate($templateFile) {
         if (is_readable(APPLICATION_PATH . '\templates\\' . $templateFile . '.template.php')) {
             $this->templateFile = APPLICATION_PATH . '\templates\\' . $templateFile . '.template.php';
