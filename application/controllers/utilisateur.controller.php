@@ -9,7 +9,7 @@ class UtilisateurController{
         $page=\F3il\Page::getInstance();
         $page->setTemplate("template-a");
         $page->setView("vue1");
-    $page->titre=$conf->nom;
-        $page->rendre();
+        $page->titre=$conf->nom;
+        //$page->rendre();
     }
 }

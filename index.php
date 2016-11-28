@@ -8,5 +8,5 @@ require_once '/framework/f3il.php';
 //require_once APPLICATION_PATH.'\controllers\utilisateur.controller.php';
 //$UC= new UtilisateurController;
 //$UC->listerAction();
-$app=\F3il\Application::getInstance();
+$app=\F3il\Application::getInstance(APPLICATION_PATH.'/configuration.ini');
 $app->run();

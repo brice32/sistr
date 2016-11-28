@@ -10,7 +10,7 @@ class Configuration {
     private function __construct($iniFile) {
         if (is_readable($iniFile)) {
             if ($this->data=parse_ini_file($iniFile)) {
-                print_r($data['nom']);
+
             } else {
                 die('ce qui a été lu vaut FALSE/configuration');
             }

@@ -1,4 +1,5 @@
 <?php
+
 namespace F3il;
 
 defined('F3IL') or die('Acces Interdit');
