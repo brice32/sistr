@@ -17,7 +17,7 @@ class Application
      */
     private function __construct($iniFile)
     {
-        \F3IL\Configuration::getInstance($iniFile);
+        Configuration::getInstance($iniFile);
         //APPLICATION_PATH.'\configuration.ini' remplace cette address de ficher par $iniFile
     }
 
@@ -51,7 +51,7 @@ class Application
         $this->actionName = filter_input(INPUT_GET, 'action');
         $actionMethod = $this->actionName . 'Action';
         $controller->$actionMethod();
-        $page = \F3il\Page::getInstance();
+        $page = Page::getInstance();
         $page->rendre();
     }
 
@@ -63,7 +63,7 @@ class Application
      */
     public function getPage()
     {
-        return \F3il\Page::getInstance();
+        return Page::getInstance();
     }
 
     /**
@@ -74,7 +74,7 @@ class Application
      */
     public function getConfiguration()
     {
-        return \F3il\Configuration::getInstance();
+        return Configuration::getInstance();
     }
 
 }

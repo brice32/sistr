@@ -25,9 +25,10 @@ class Error extends \Exception{
      * @param string $message
      */
     public function __construct($message) {
+
         parent::__construct($message);
-        if(\F3il\Configuration::isLoaded()){
-            $conf=\F3il\Configuration::getInstance();
+        if(Configuration::isLoaded()){
+            $conf=Configuration::getInstance();
 
             if($conf->run_mode==self::DEBUG){
                 $this->runMode = self::DEBUG;

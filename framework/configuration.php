@@ -1,5 +1,7 @@
 <?php
+
 namespace F3il;
+
 defined("F3IL") or die("Access interdit configuration.php");
 
 class Configuration
@@ -15,6 +17,7 @@ class Configuration
      */
     private function __construct($iniFile)
     {
+
         if (is_readable($iniFile)) {
             if ($this->data = parse_ini_file($iniFile)) {
 

@@ -7,7 +7,9 @@ if (!defined('APPLICATION_PATH')) {
 if (!defined('APPLICATION_NAMESPACE')) {
     throw new Error('erreu APPLICATION_NAMESPACE dans f3il');
 }
-require_once '/framework/page.php';
-require_once '/framework/application.php';
-require_once '/framework/configuration.php';
-require_once '/framework/error.php';
+//require_once '/framework/page.php';
+//require_once '/framework/application.php';
+//require_once '/framework/configuration.php';
+//require_once '/framework/error.php';
+require_once '/framework/autoloader.php';
+\F3il\AutoLoader::getInstance(APPLICATION_PATH,APPLICATION_NAMESPACE);
