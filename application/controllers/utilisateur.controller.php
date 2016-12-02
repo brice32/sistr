@@ -2,8 +2,13 @@
 namespace Sistr;
 defined('F3IL') or die('Acces Interdit');
 
-class UtilisateurController
+class UtilisateurController extends \F3il\Controller
 {
+    public function __construct($actionName='lister')
+    {
+        $this->setDefaultActionName($actionName);
+    }
+
 
 
     public function listerAction()

@@ -9,6 +9,7 @@ class Application
     private static $_instance;
     protected $controllerName;
     protected $actionName;
+    protected $defaultControllerName;
 
     /**
      * Constructeur
@@ -44,12 +45,28 @@ class Application
     public function run()
     {
         $this->controllerName = filter_input(INPUT_GET, 'controller');
-        require_once APPLICATION_PATH . '\controllers\\' . $this->controllerName . '.controller.php';
+        //require_once APPLICATION_PATH . '\controllers\\' . $this->controllerName . '.controller.php';
+        if(!filter_has_var(INPUT_GET, 'controller'))
+        {
+            $this->controllerName=$this->defaultControllerName;
+        }
+        else if(!is_readable(APPLICATION_PATH.'\\controllers\\'.$this->controllerName.'.controller.php')){
+            throw new \F3il\Error("Methode $this->controllerName ne peut pas trouvé!");
+        }
+        $this->setDefaultControllerName($this->controllerName);
         $this->actionName = filter_input(INPUT_GET, 'action');
-        $controllerClass = "\\" . APPLICATION_NAMESPACE . "\\" . ucfirst($this->controllerName) . 'Controller';
+        $controllerClass = "\\" . APPLICATION_NAMESPACE . "\\" . ucfirst($this->defaultControllerName) . 'Controller';
         $controller = new $controllerClass;
         $this->actionName = filter_input(INPUT_GET, 'action');
+        if(!filter_has_var(INPUT_GET, 'action'))
+        {
+            $this->actionName=$controller->getDefaultActionName();
+        }
         $actionMethod = $this->actionName . 'Action';
+
+        if(!method_exists($controller, $actionMethod)){
+            throw new \F3il\ControllerError("methode ou action ne marche pas",$this->controllerName, $this->actionName);
+        }
         $controller->$actionMethod();
         $page = Page::getInstance();
         $page->rendre();
@@ -77,4 +94,9 @@ class Application
         return Configuration::getInstance();
     }
 
+    public function setDefaultControllerName($controllerName){
+
+            $this->defaultControllerName=$controllerName;
+
+    }
 }
