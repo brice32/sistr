@@ -1,6 +1,6 @@
 <?php
 namespace Sistr;
-defined('F3IL') or die('Acces Interdit');
+defined('SISTR') or die('Acces Interdit');
 
 class UtilisateurController extends \F3il\Controller
 {
@@ -17,7 +17,11 @@ class UtilisateurController extends \F3il\Controller
         $page = \F3il\Page::getInstance();
         $page->setTemplate("template-a");
         $page->setView("vue1");
-        $page->titre = $conf->nom;
+        $page->titre = 'lister des utilisateurs';
+
+        $model = new UtilisateursModel();
+
+        $page->utilisateurs = $model->lister();
         //$page->rendre();
     }
 }
