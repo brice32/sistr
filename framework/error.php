@@ -54,6 +54,7 @@ class Error extends \Exception{
 
     public function __toString() {
         // TODO: Implement __toString() method.
+        ob_end_clean();
         if ($this->runMode == self::DEBUG) {
             $this->productionRender();
         } else if ($this->runMode == self::PRODUCTION) {

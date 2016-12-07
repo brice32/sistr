@@ -1,10 +1,13 @@
 <?php
 defined('SISTR') or die('Acces interdit');
+
 ?>
 <!DOCTYPE>
 <html>
 <head>
     <meta charset="UTF-8">
+    <?php echo '[%TITLE%]';?>
+    <?php echo '[%STYLESHEETS%]'?>
 </head>
 <body>
 <h1>Template Simple</h1>

@@ -40,6 +40,8 @@ defined('F3IL') or die('Acces Interdit');
             min-height: 400px;
         }
     </style>
+    <?php echo '[%TITLE%]';?>
+    <?php echo '[%STYLESHEETS%]'?>
 </head>
 <body>
 <header>

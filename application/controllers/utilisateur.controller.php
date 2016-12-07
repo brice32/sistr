@@ -1,5 +1,7 @@
 <?php
 namespace Sistr;
+use F3il\Messages;
+
 defined('SISTR') or die('Acces Interdit');
 
 class UtilisateurController extends \F3il\Controller
@@ -22,6 +24,7 @@ class UtilisateurController extends \F3il\Controller
         $model = new UtilisateursModel();
 
         $page->utilisateurs = $model->lister();
+        Messages::addMessage("ici,UtilisateurController!",0);
         //$page->rendre();
     }
 }

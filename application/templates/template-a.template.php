@@ -1,6 +1,7 @@
 <?php
 defined('SISTR') or die('Acces interdit');
 defined('F3IL') or die('Acces Interdit');
+//$page=\F3il\Page::getInstance();
 ?>
 <!DOCTYPE>
 <html>
@@ -39,11 +40,15 @@ defined('F3IL') or die('Acces Interdit');
             min-height: 400px;
         }
     </style>
+            <?php echo '[%TITLE%]';?>
+            <?php //$this->insertStyleSheets();?>
+            <?php echo '[%STYLESHEETS%]'?>
 </head>
 <body>
 <header>
     <h1>Template A</h1>
     <p><?php echo __FILE__; ?></p>
+
 </header>
 <nav>
     <p>Navigation</p>
@@ -51,7 +56,8 @@ defined('F3IL') or die('Acces Interdit');
 <main>
     <section>
         <!-- Afffichage de la vue -->
-        <?php $this->insertView(); ?>
+        <?php echo '[%VIEW%]'; ?>
+        [%STYLE%]
     </section>
     <aside>
         Aside

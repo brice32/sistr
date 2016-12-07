@@ -11,14 +11,15 @@ class Page
     protected $viewFile;
     protected $data = array();
     private static $_instance;
-
+    protected $pageTitle;
+    protected $viewHTML;
+    protected $cssFiles= array();
     /**
      * Constructeur
      *
      */
     private function __construct()
     {
-
     }
 
     /**
@@ -69,7 +70,8 @@ class Page
      */
     private function insertView()
     {
-        require $this->viewFile;
+        //require $this->viewFile;
+        echo $this->viewHTML;
     }
 
     /**
@@ -79,7 +81,14 @@ class Page
     public function rendre()
     {
         if (isset($this->templateFile) && isset($this->viewFile)) {
+            ob_start();
+            require $this->viewFile;
+            $this->viewHTML=preg_replace_callback('/\[%\w+\%]/is', array($this,'renderCallback'), ob_get_clean());
+            ob_start();
             require $this->templateFile;
+            $html=ob_get_clean();
+            echo preg_replace_callback('/\[%\w+\%]/is', array($this,'renderCallback'), $html);
+
         }
     }
 
@@ -117,6 +126,58 @@ class Page
     public function __isset($name)
     {
         return isset($this->data[$name]);
+    }
+
+    /**
+     * Methode permettant variable de pageTitle
+     * @param $pageTitle
+     */
+    public function setPageTitle($pageTitle){
+        $this->pageTitle=$pageTitle;
+    }
+
+    /**
+     * return le variable pageTitle
+     *
+     * @return mixed
+     */
+    public function getPageTitle(){
+        return $this->pageTitle;
+    }
+
+    public function addStyleSheet($cssFile){
+        if(!is_readable($cssFile)){
+            throw new Error("Le ficher CSS:$cssFile ne peut pas ouvre.");
+        }
+        if(in_array($cssFile,$this->cssFiles)){
+            return ;
+        }
+        else{
+            $this->cssFiles[]=$cssFile;
+        }
+    }
+
+    public function insertStyleSheets(){
+        ob_start();
+        foreach($this->cssFiles as $css){
+            echo "<link type=\"text/css\" rel=\"stylesheet\" href=\"$css\" >";
+        }
+        return ob_get_clean();
+    }
+
+    function renderCallback($matches){
+        switch($matches[0]){
+            case '[%VIEW%]': return $this->viewHTML;
+            case '[%STYLESHEETS%]': return $this->insertStyleSheets();
+            case '[%TITLE%]' : return $this->insertPageTitle();
+            case '[%MESSAGES%]': return Messages::render();
+            default:
+                return '';
+        }
+    }
+
+    function insertPageTitle(){
+        return "<title>$this->pageTitle</title>";
     }
 }
 
