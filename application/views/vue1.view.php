@@ -1,6 +1,11 @@
+<?php
+$this->setPageTitle('vue1');
+//$this->addStyleSheet('css/background-red.css');
+//$this->addStyleSheet('css/background-red.css');
+\F3il\Messages::setMessageRenderer('\Sistr\MessagesHelper::messagesRenderer');
+?>
 <div>
     <h2>Vue 1</h2>
-    [%MESSAGES%]
     <p><?php echo __FILE__; ?></p>
     <p><?php echo $this->titre; ?></p>
     <ul>
@@ -14,8 +19,4 @@
         ?>
     </ul>
 </div>
-<?php
-$this->setPageTitle('vue1');
-//$this->addStyleSheet('css/background-red.css');
-//$this->addStyleSheet('css/background-red.css');
-?>
+

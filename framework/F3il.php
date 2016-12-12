@@ -1,5 +1,6 @@
 <?php
 namespace F3il;
+session_start();
 define('F3IL', '');
 if (!defined('APPLICATION_PATH')) {
     throw new Error('erreu APPLICATION_PATH dans f3il');

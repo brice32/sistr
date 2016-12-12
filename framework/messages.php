@@ -9,24 +9,25 @@ namespace F3il;
 
 defined('F3IL') or die('Acces Interdit messages.php');
 
-const MESSAGE_SUCCES=0;
-const MESSAGE_WARNING=1;
-const MESSAGE_ERROR=2;
+
 
 class Messages{
 
+    const MESSAGE_SUCCESS=0;
+    const MESSAGE_WARNING=1;
+    const MESSAGE_ERROR=2;
 
     private static $_messages=array();
     private static $_renderer='\F3il\Messages::defaultRenderer';
 
     public static function addMessage($message,$type){
-        if($type!=MESSAGE_SUCCES&&$type!=MESSAGE_WARNING&&$type!=MESSAGE_ERROR){
+        if($type!=self::MESSAGE_SUCCESS&&$type!=self::MESSAGE_WARNING&&$type!=self::MESSAGE_ERROR){
             throw new Error('Si la valeur de type n\'est pas parmi les 3 constantes déclencher une Error pour type de message inconnu.');
         }
-        self::$_messages[]=$message;
+        self::$_messages[]= array( 'message'=> $message, 'type'=> $type);
     }
 
-    public static function getMessagesCount(){
+    public static function getMessageCount(){
         return count(self::$_messages);
     }
 
@@ -54,8 +55,8 @@ class Messages{
     }
 
     public static function defaultRenderer(){
-        self::addMessage("lalala",1);
-        self::addMessage("blabla",0);
+//        self::addMessage("lalala",1);
+//        self::addMessage("blabla",0);
         ob_start();
         echo '<div>';
         foreach (self::$_messages as $message){
