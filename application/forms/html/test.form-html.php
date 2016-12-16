@@ -8,6 +8,7 @@ defined('SISTR') or die('Acces interdit');
             $this->fLabel('email') ?>: </label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+            <?php $this->fMessages('email');?>
         </div>
     </div>
     <div class="form-group">
@@ -15,6 +16,7 @@ defined('SISTR') or die('Acces interdit');
             $this->fLabel('age') ?> : </label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+            <?php $this->fMessages('age'); ?>
         </div>
     </div>
     <div class="form-group">

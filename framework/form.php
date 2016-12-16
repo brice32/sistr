@@ -163,6 +163,10 @@ class Form
             if(in_array($field->name,$this->_missingFields)){
                 $valid=false;
             }
+            if($field->value===null){
+                $valid=false;
+                $field->addMessage($this->missingFieldMessageRenderer($field));
+            }
             if(trim($field->value)!=null||$field->required){
                 $fieldName=$field->name;
                 $validator = str_replace('-', '', lcfirst(ucwords($fieldName, '-'))) . 'Validator';
@@ -202,9 +206,15 @@ class Form
             foreach($this->_fields[$fieldName]->getMessages() as $message){
                 $this->messageRenderer($message);
             }
+            return ;
         }
         else{
             throw new Error("le champ n'existe pas $fieldName. fMessage");
         }
+    }
+
+    public function missingFieldMessageRenderer($field){
+        $label=strtolower($field->label);
+        return "le champ $label est manquant";
     }
 }

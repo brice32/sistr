@@ -16,6 +16,6 @@ defined("SISTR") or die("Acess interdit form.view");
     <h2>Form Test</h2>
     <?php
     $this->formulaire->render();
-    $this->formulaire->fMessages('age'); ?>
+    ?>
     <pre><?php print_r($this->formulaire) ?></pre>
 </div>
