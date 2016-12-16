@@ -16,17 +16,20 @@ class Form
     protected $_fields = array();
     protected $_action;
     protected $_missingFields = array();
+    private $_formId;
 
 
 
     public function __construct($action)
     {
         $this->_action = $action;
+        $this->_formId=$action;
     }
 
     public function render()
     {
         require $this->_html;
+        $this->insertFormId();
     }
 
     public function getHtmlFile()
@@ -217,4 +220,17 @@ class Form
         $label=strtolower($field->label);
         return "le champ $label est manquant";
     }
+
+    public function getData(){
+        $table=array();
+        foreach($this->_fields as $field) {
+            $table[$field->name] = $field->value;
+        }
+        return $table;
+    }
+
+    public function insertFormId(){
+        echo "<input type='hidden' name=$this->_formId value='1' form=$this->_formId>";
+    }
+
 }

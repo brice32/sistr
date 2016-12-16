@@ -29,7 +29,7 @@ class FormController extends \F3il\Controller{
             \F3il\Messages::addMessage("Non valide",2);
             $form->valide="Non valide";
         }
-
+        $page->formData=$form->getData();
     }
 
 }
