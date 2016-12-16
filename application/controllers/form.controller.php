@@ -18,10 +18,17 @@ class FormController extends \F3il\Controller{
         $page=\F3il\Page::getInstance();
         $page->setTemplate("template-bt");
         $page->setView("form");
-        $form=TestForm::getInstance();
+        $form=new TestForm("?controller=form&action=form");
         $form->getHtmlFile();
-//        $page->_html=$form->getHtmlFile();
         $page->formulaire=$form;
+        $form->loadData(INPUT_POST);
+        if($form->isValid()){
+            \F3il\Messages::addMessage("Valide",0);
+            $form->valide="Valide";
+        }else{
+            \F3il\Messages::addMessage("Non valide",2);
+            $form->valide="Non valide";
+        }
 
     }
 

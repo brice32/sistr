@@ -16,6 +16,8 @@ class Field{
     public $required;
     public $value;
     public $defaultValue;
+    protected $messages=array();
+
 
     public function __construct($name,$label,$defaultValue=null,$required=false){
         $this->name=$name;
@@ -23,4 +25,14 @@ class Field{
         $this->defaultValue=$defaultValue;
         $this->required=$required;
     }
+
+    public function addMessage($message){
+        $this->messages[]=$message;
+    }
+
+    public function getMessages(){
+        return $this->messages;
+    }
+
+
 }
