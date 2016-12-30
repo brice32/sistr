@@ -51,4 +51,19 @@ class UtilisateurController extends \F3il\Controller
 
        }
     }
+
+    public function creerAction(){
+        $page=\F3il\Page::getInstance();
+        $page->setTemplate("template-bt");
+        $page->setView("form");
+        $form=new UtilisateurForm("?controller=utilisateur&action=creer");
+        $form->getHtmlFile();
+        $page->formulaire=$form;
+        $form->loadData(INPUT_POST);
+        if(!$form->isValid()){
+            \F3il\Messages::addMessage("Le formulaire n'est pas valide",2);
+            return;
+        }
+        $page->formData=$form->getData();
+    }
 }

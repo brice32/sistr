@@ -19,17 +19,16 @@ class Form
     private $_formId;
 
 
-
-    public function __construct($action)
+    public function __construct($action, $formId)
     {
         $this->_action = $action;
-        $this->_formId=$action;
+        $this->_formId = $formId;
     }
 
     public function render()
     {
-        require $this->_html;
         $this->insertFormId();
+        require $this->_html;
     }
 
     public function getHtmlFile()
@@ -60,6 +59,15 @@ class Form
         }
         if (!is_readable($this->_html)) {
             throw new Error("fichier introuvable si $this->_html n'est pas lisible $nombre $nom1");
+        }
+
+
+
+        if (strrpos(file_get_contents($this->_html),$this->_formId)) {
+
+        } else {
+            throw new Error("la présence de \$_formId. En cas
+            d'absence, lever une erreur pour l'absence de $this->_formId dans le formulaire.");
         }
     }
 
@@ -160,21 +168,22 @@ class Form
         }
     }
 
-    public function isValid(){
+    public function isValid()
+    {
         $valid = true;
         foreach ($this->_fields as $field) {
-            if(in_array($field->name,$this->_missingFields)){
-                $valid=false;
+            if (in_array($field->name, $this->_missingFields)) {
+                $valid = false;
             }
-            if($field->value===null){
-                $valid=false;
+            if ($field->value === null) {
+                $valid = false;
                 $field->addMessage($this->missingFieldMessageRenderer($field));
             }
-            if(trim($field->value)!=null||$field->required){
-                $fieldName=$field->name;
+            if (trim($field->value) != null || $field->required) {
+                $fieldName = $field->name;
                 $validator = str_replace('-', '', lcfirst(ucwords($fieldName, '-'))) . 'Validator';
-                if(method_exists($this,$validator)){
-                    $valid=$this->$validator($field->value)&&$valid;
+                if (method_exists($this, $validator)) {
+                    $valid = $this->$validator($field->value) && $valid;
                 }
 
             }
@@ -182,55 +191,92 @@ class Form
         return $valid;
     }
 
-    public function addMessage($fieldName,$message){
-        if(array_key_exists ( $fieldName , $this->_fields )){
+    public function addMessage($fieldName, $message)
+    {
+        if (array_key_exists($fieldName, $this->_fields)) {
             $this->_fields[$fieldName]->addMessage($message);
-        }
-        else{
+        } else {
             throw new \F3il\Error("Les champ $fieldName n'existe pas!");
         }
     }
 
-    public function getValidationMessage($fieldName){
-        if(array_key_exists ( $fieldName , $this->_fields )){
+    public function getValidationMessage($fieldName)
+    {
+        if (array_key_exists($fieldName, $this->_fields)) {
             return $this->_fields[$fieldName]->getMessages();
-        }
-        else{
+        } else {
             throw new Error("champ non présent dans le formulaire si $fieldName de correspond pas à un champ du formulaire. getValidationMessage");
         }
     }
 
-    public function messageRenderer($message){
-        echo '<p>'.$message.'</p>';
+    public function messageRenderer($message)
+    {
+        echo '<p>' . $message . '</p>';
     }
 
-    public function fMessages($fieldName){
-        if(array_key_exists ( $fieldName , $this->_fields )){
-            foreach($this->_fields[$fieldName]->getMessages() as $message){
+    public function fMessages($fieldName)
+    {
+        if (array_key_exists($fieldName, $this->_fields)) {
+            foreach ($this->_fields[$fieldName]->getMessages() as $message) {
                 $this->messageRenderer($message);
             }
-            return ;
-        }
-        else{
+            return;
+        } else {
             throw new Error("le champ n'existe pas $fieldName. fMessage");
         }
     }
 
-    public function missingFieldMessageRenderer($field){
-        $label=strtolower($field->label);
+    public function missingFieldMessageRenderer($field)
+    {
+        $label = strtolower($field->label);
         return "le champ $label est manquant";
     }
 
-    public function getData(){
-        $table=array();
-        foreach($this->_fields as $field) {
+    public function getData()
+    {
+        $table = array();
+        foreach ($this->_fields as $field) {
             $table[$field->name] = $field->value;
         }
         return $table;
     }
 
-    public function insertFormId(){
+    public function insertFormId()
+    {
         echo "<input type='hidden' name=$this->_formId value='1' form=$this->_formId>";
     }
 
+    public function isSubmitted(){
+       return  $_SERVER['REQUEST_METHOD'] == 'POST';
+    }
+
+    public function __get($fieldName){
+        if(!array_key_exists($fieldName,$this->_fields)){
+            throw new Error("43.4 __get() ne peut pas trouve $fieldName dans _fields");
+        }
+        return  $this->_fields[$fieldName];
+    }
+
+//    public function __set($fieldName){
+//        if($this->__isset($fieldName)){
+//            throw new Error("43.4 __set() $fieldName a ete sette dans _fields");
+//        }
+//        else{
+//            $this->_fields[]=$fieldName;
+//        }
+//    }
+//
+//    public function __isset($fieldName){
+//        if(array_key_exists($fieldName,$this->_fields)){
+//            return true;
+//        }
+//        return false;
+//    }
+
+    public function getField($fieldName){
+        if(!array_key_exists($fieldName,$this->_fields)){
+            throw new Error("43.6 getField() ne peut pas trouve $fieldName dans _fields");
+        }
+        return  $this->_fields[$fieldName];
+    }
 }

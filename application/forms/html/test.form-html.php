@@ -2,7 +2,7 @@
 namespace Sistr;
 defined('SISTR') or die('Acces interdit');
 ?>
-<form method="POST" action="<?php $this->getAction(); ?>" class="form-horizontal">
+<form id="test-form" method="POST" action="<?php $this->getAction(); ?>" class="form-horizontal">
     <div class="form-group">
         <label for="email" class="col-sm-2 control-label"><?php $this->fName('email');
             $this->fLabel('email') ?>: </label>

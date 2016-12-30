@@ -21,13 +21,20 @@ class FormController extends \F3il\Controller{
         $form=new TestForm("?controller=form&action=form");
         $form->getHtmlFile();
         $page->formulaire=$form;
+//        if(!$form->isSubmitted()){
+//           return ;
+//        }
         $form->loadData(INPUT_POST);
-        if($form->isValid()){
-            \F3il\Messages::addMessage("Valide",0);
-            $form->valide="Valide";
-        }else{
-            \F3il\Messages::addMessage("Non valide",2);
-            $form->valide="Non valide";
+//        if($form->isValid()){
+//            \F3il\Messages::addMessage("Valide",0);
+//            $form->valide="Valide";
+//        }else{
+//            \F3il\Messages::addMessage("Non valide",2);
+//            $form->valide="Non valide";
+//        }
+        if(!$form->isValid()){
+            \F3il\Messages::addMessage("Le formulaire n'est pas valide",2);
+            return;
         }
         $page->formData=$form->getData();
     }
