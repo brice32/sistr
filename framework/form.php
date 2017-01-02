@@ -60,9 +60,6 @@ class Form
         if (!is_readable($this->_html)) {
             throw new Error("fichier introuvable si $this->_html n'est pas lisible $nombre $nom1");
         }
-
-
-
         if (strrpos(file_get_contents($this->_html),$this->_formId)) {
 
         } else {

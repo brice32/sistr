@@ -31,5 +31,26 @@ class UtilisateursModel {
             die('Erreur SQL '.$ex->getMessage());
         }
     }
+
+    public function creer(array $data){
+        $db= \F3il\Database::getInstance();
+        $sql = "INSERT INTO utilisateurs SET "
+            ." nom = :nom"
+            .", prenom = :prenom"
+            .", login = :login"
+            .", motdepasse = :motdepasse"
+            .", creation = '".date('Y-m-d H:i:s')."'"
+        ;
+        $req = $db->prepare($sql);
+        $req->bindValue(':nom',$data['nom']);
+        $req->bindValue(':prenom',$data['prenom']);
+        $req->bindValue(':login',$data['login']);
+        $req->bindValue(':motdepasse',$data['motdepasse']);
+        try {
+            $req->execute();
+        } catch (\PDOException $ex) {
+            throw new \F3il\Error("Erreur SQL ".$ex->getMessage());
+        }
+    }
 }
 

@@ -17,13 +17,81 @@ class UtilisateurForm extends Form{
     public function __construct($action)
     {
         parent::__construct($action, 'utilisateur-creer');
-        $this->addFormField(new \F3il\Field('id', 'Id', null, true));
+//        $this->addFormField(new \F3il\Field('id', 'Id', null, true));
         $this->addFormField(new \F3il\Field('nom', 'Nom', null, true));
         $this->addFormField(new \F3il\Field('prenom', 'Prenom', null, true));
         $this->addFormField(new \F3il\Field('email', 'Email', null, true));
         $this->addFormField(new \F3il\Field('login', 'Login', null, true));
         $this->addFormField(new \F3il\Field('motdepasse', 'Motdepasse', null, true));
         $this->addFormField(new \F3il\Field('confirmation', 'Confirmation', null, true));
+    }
+
+    public function nomFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function prenomFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function emailFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function loginFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function motdepasseFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function confirmationFilter($value){
+        return filter_var($value,FILTER_SANITIZE_STRING);
+    }
+
+    public function mailValidator($mail){
+        if(filter_var($mail,FILTER_VALIDATE_EMAIL)){
+            return true;
+        }
+        else{
+            $this->addMessage('email',"mail n'est pas etre formulaire");
+            return false;
+        }
+    }
+
+    public function loginValidator($login){
+        if(!strpos($login," ")){
+            if(strlen($login)>=6){
+                return true;
+            }
+            else{
+                $this->addMessage('login',"Login doit Longueur >=6");
+            }
+
+        }else{
+            $this->addMessage('login',"Login ne doit pas contenir d'espaces");
+        }
+        return false;
+    }
+
+    public function motdepasseValidator($motdepasse){
+        if(strlen($motdepasse)>=4){
+            return true;
+        }
+        else{
+            $this->addMessage('motdepasse',"Motdepasse doit Longueur >=4");
+            return false;
+        }
+    }
+
+    public function confirmationValidator($confirmation){
+        if($_POST["motdepasse"]===$confirmation){
+            return true;
+        }
+        else{
+            $this->addMessage('confirmation',"Confirmation doit meme que MotDePasse.");
+        }
     }
 
     public function messageRenderer($message)

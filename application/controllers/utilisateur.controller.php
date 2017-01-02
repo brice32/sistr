@@ -56,7 +56,8 @@ class UtilisateurController extends \F3il\Controller
         $page=\F3il\Page::getInstance();
         $page->setTemplate("template-bt");
         $page->setView("form");
-        $form=new UtilisateurForm("?controller=utilisateur&action=creer");
+        $form=new UtilisateurForm(0);
+        //"?controller=utilisateur&action=creer"
         $form->getHtmlFile();
         $page->formulaire=$form;
         $form->loadData(INPUT_POST);
@@ -65,5 +66,11 @@ class UtilisateurController extends \F3il\Controller
             return;
         }
         $page->formData=$form->getData();
+        $mode = new UtilisateursModel();
+        $mode->creer($form->getData());
+        $nom=$page->formData['nom'];
+        $prenom=$page->formData['prenom'];
+        \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+        \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
     }
 }
