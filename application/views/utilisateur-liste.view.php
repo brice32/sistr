@@ -9,6 +9,11 @@ namespace Sistr;
 defined("SISTR") or die("Acess interdit utilisateur-liste");
 ?>
 <h2>Liste des utilisateurs</h2>
+<div id="datagrid-commands">
+    <a href="?controller=utilisateur&action=creer">
+        <button class="btn btn-primary">Nouvel Utilisateur</button>
+    </a>
+</div>
 <table class="table table-condensed table-bordered table-striped table-hover">
     <thead>
     <tr>
@@ -42,6 +47,7 @@ defined("SISTR") or die("Acess interdit utilisateur-liste");
         <?php
     endforeach;
     ?>
+
 <!--    <tr>-->
 <!--        <td>WANG</td>-->
 <!--        <td>Yuchen</td>-->
@@ -68,7 +74,7 @@ defined("SISTR") or die("Acess interdit utilisateur-liste");
 <!--    <input type="hidden" name="controller" value="utilisateur"/>-->
 <!--    <input type="hidden" name="action" value="supprimer"/>-->
 </form>
-<form id="edit-form" method="POST" action="#">
+<form id="edit-form" method="POST" action="?controller=utilisateur&action=editer">
     <input type="hidden" name="controller" value="utilisateur"/>
     <input type="hidden" name="action" value="editer"/>
 </form>

@@ -131,7 +131,7 @@ class Form
     {
         foreach ($this->_fields as $field) {
             if (filter_input($source, $field->name)) {
-                $trim = trim(filter_input(INPUT_POST, $field->name));
+                $trim = trim(filter_input(INPUT_POST, $field->name)," ");
                 $trim = $this->applyFilter($field->name, $trim);
                 $field->value = $trim;
             } else {
@@ -155,12 +155,15 @@ class Form
     {
         foreach ($this->_fields as $field) {
             if (array_key_exists($field->name, $source)) {
-
-                $trim = trim(filter_var($source[$field->name]->value));
-                $trim = $this->applyFilter($field->name, $trim);
-                $field->value = $trim;
-            } else {
-                $this->_missingFields[] = $field->name;
+                $trim = trim($source[$field->name]," ");
+                if($trim!=null){
+                    $trim=filter_var($trim);
+                    $trim = $this->applyFilter($field->name, $trim);
+                    $field->value = $trim;
+                }
+                else if($field->required){
+                    $this->_missingFields[] = $field->name;
+                }
             }
         }
     }

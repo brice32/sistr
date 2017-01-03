@@ -20,5 +20,6 @@ defined("SISTR") or die("Acess interdit form.view");
     <pre><?php
 //        print_r($this->formData);
         print_r($this->formulaire);
+        print_r($_POST);
         ?></pre>
 </div>

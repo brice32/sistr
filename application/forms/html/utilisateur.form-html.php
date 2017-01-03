@@ -62,7 +62,7 @@ defined('SISTR') or die('Acces interdit');
 <!--            --><?php //$this->fMessages('motdepasse');?>
 <!--        </div>-->
 <!--    </div>-->
-    <?php FormHelper::input($this,"motdepasse","text")?>
+    <?php FormHelper::input($this,"motdepasse","password")?>
 <!--    <div class="form-group">-->
 <!--        <label for="confirmation" class="col-sm-2 control-label">--><?php //$this->fName('confirmation');
 //            $this->fLabel('confirmation') ?><!--: </label>-->
@@ -71,7 +71,7 @@ defined('SISTR') or die('Acces interdit');
 <!--            --><?php //$this->fMessages('confirmation');?>
 <!--        </div>-->
 <!--    </div>-->
-    <?php FormHelper::input($this,"confirmation","text")?>
+    <?php FormHelper::input($this,"confirmation","password")?>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Envoyer</button>
