@@ -107,5 +107,36 @@ class UtilisateursModel
         return $req->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function mettreAJour($data)
+    {
+        $db = \F3il\Database::getInstance();
+        $sql = "UPDATE `utilisateurs` SET "
+            . " nom = :nom "
+            . ", prenom = :prenom "
+            . ", login = :login ";
+        if (!empty($data['motdepasse'])) {
+            $sql .= ", motdepasse = :motdepasse "
+                . ", creation = :creation";
+        }
+
+        $sql .= " WHERE id= :id";
+
+        $req = $db->prepare($sql);
+        try {
+            $req->bindValue(':nom', $data['nom']);
+            $req->bindValue(':prenom', $data['prenom']);
+            $req->bindValue(':login', $data['login']);
+
+            if (!empty($data['motdepasse'])) {
+                $req->bindValue(':creation', date('Y-m-d H:i:s'));
+                $req->bindValue(':motdepasse', $data['motdepasse']);
+            }
+            $req->bindValue(':id', $data['id']);
+            $req->execute();
+        } catch (\PDOException $ex) {
+            throw new \F3il\Error("Erreur SQL " . $ex->getMessage());
+        }
+    }
+
 }
 

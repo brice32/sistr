@@ -132,4 +132,13 @@ class UtilisateurForm extends Form
         $label = strtolower($field->label);
         return "Veuillez remplir le champ $label.";
     }
+
+    public function isValid(){
+        $valid = parent::isValid();
+        if($this->id==0) return $valid;
+        if($this->motdepasse != '' && $this->confirmation==''){
+            $valid = $this->confirmationValidator($this->confirmation) && $valid;
+        }
+        return $valid;
+    }
 }

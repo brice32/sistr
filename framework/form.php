@@ -155,8 +155,8 @@ class Form
     {
         foreach ($this->_fields as $field) {
             if (array_key_exists($field->name, $source)) {
-                $trim = trim($source[$field->name]," ");
-                if($trim!=null){
+                $trim = trim($source[$field->name]);
+                if($trim!=''){
                     $trim=filter_var($trim);
                     $trim = $this->applyFilter($field->name, $trim);
                     $field->value = $trim;
@@ -248,6 +248,7 @@ class Form
 
     public function isSubmitted(){
        return  $_SERVER['REQUEST_METHOD'] == 'POST';
+       return filter_input(INPUT_SERVER,'REQUEST_METHOD') && filter_input(INPUT_POST,$this->_formId,FILTER_SANITIZE_STRING)==1;
     }
 
     public function __get($fieldName){
