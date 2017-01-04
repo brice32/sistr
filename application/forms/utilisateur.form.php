@@ -18,7 +18,7 @@ class UtilisateurForm extends Form
     public function __construct($action)
     {
         parent::__construct($action, 'utilisateur-creer');
-//        $this->addFormField(new \F3il\Field('id', 'Id', 0, true));
+        $this->addFormField(new \F3il\Field('id', 'Id', 0, false));
         $this->addFormField(new \F3il\Field('nom', 'Nom', null, true));
         $this->addFormField(new \F3il\Field('prenom', 'Prenom', null, true));
         $this->addFormField(new \F3il\Field('email', 'Email', null, true));

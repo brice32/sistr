@@ -75,6 +75,6 @@ defined("SISTR") or die("Acess interdit utilisateur-liste");
 <!--    <input type="hidden" name="action" value="supprimer"/>-->
 </form>
 <form id="edit-form" method="POST" action="?controller=utilisateur&action=editer">
-    <input type="hidden" name="controller" value="utilisateur"/>
-    <input type="hidden" name="action" value="editer"/>
+<!--    <input type="hidden" name="controller" value="utilisateur"/>-->
+<!--    <input type="hidden" name="action" value="editer"/>-->
 </form>

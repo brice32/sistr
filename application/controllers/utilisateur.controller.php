@@ -36,8 +36,9 @@ class UtilisateurController extends \F3il\Controller
     public function editerAction()
     {
         $page = \F3il\Page::getInstance();
+        $page->setPageTitle('Modifier utilisateur');
         $page->setTemplate("template-bt");
-        $page->setView("form");
+        $page->setView("utilisateur-form");
         $form = new UtilisateurForm("?controller=utilisateur&action=editer");
         //"?controller=utilisateur&action=creer"
         $form->getHtmlFile();
@@ -50,11 +51,33 @@ class UtilisateurController extends \F3il\Controller
 //            $_POST["confirmation"] = false;
 //        }
 //        $page->formulaire = $form;
-//        if(!$form->isSubmitted()){
-        $mode = new UtilisateursModel();
-        $form->loadData($mode->lire($id));
-        $page->formulaire = $form;
-//        }
+        $form->getField("motdepasse")->value = null;
+        $form->getField("confirmation")->value = null;
+
+        if (!$form->isSubmitted()) {
+            $mode = new UtilisateursModel();
+            $form->loadData($mode->lire($id));
+            $form->getField("motdepasse")->value = "";
+            $form->getField("confirmation")->value = "";
+            $page->formulaire = $form;
+        }
+        else{
+            $page->formulaire = $form;
+            $form->loadData(INPUT_POST);
+//            if (!$form->isValid()) {
+//                \F3il\Messages::addMessage("Le formulaire n'est pas valide", 2);
+//                return;
+//            }
+            $page->formData = $form->getData();
+            $mode = new UtilisateursModel();
+            $mode->mettreAJour($form->getData());
+            $nom = $page->formData['nom'];
+            $prenom = $page->formData['prenom'];
+            \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+            \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
+        }
+
+
     }
 
     public function supprimerAction()
@@ -72,12 +95,16 @@ class UtilisateurController extends \F3il\Controller
 
     public function creerAction()
     {
+//        $_POST['id']=0;
         $page = \F3il\Page::getInstance();
+        $page->setPageTitle("Nouvel utilisateur");
         $page->setTemplate("template-bt");
-        $page->setView("form");
-        $form = new UtilisateurForm(0);
+        $page->setView("utilisateur-form");
+        $form = new UtilisateurForm("?controller=utilisateur&action=creer");
+        $form->getField('id')->value = 0;
         //"?controller=utilisateur&action=creer"
         $form->getHtmlFile();
+
         $page->formulaire = $form;
         if ($form->isSubmitted()) {
             $form->loadData(INPUT_POST);

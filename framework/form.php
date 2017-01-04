@@ -27,8 +27,8 @@ class Form
 
     public function render()
     {
-        $this->insertFormId();
         require $this->_html;
+        $this->insertFormId();
     }
 
     public function getHtmlFile()
@@ -131,10 +131,10 @@ class Form
     {
         foreach ($this->_fields as $field) {
             if (filter_input($source, $field->name)) {
-                $trim = trim(filter_input(INPUT_POST, $field->name)," ");
+                $trim = trim(filter_input(INPUT_POST, $field->name));
                 $trim = $this->applyFilter($field->name, $trim);
                 $field->value = $trim;
-            } else {
+            } else if($field->required){
                 $this->_missingFields[] = $field->name;
             }
         }
@@ -247,7 +247,7 @@ class Form
     }
 
     public function isSubmitted(){
-       return  $_SERVER['REQUEST_METHOD'] == 'POST';
+//       return  $_SERVER['REQUEST_METHOD'] == 'POST';
        return filter_input(INPUT_SERVER,'REQUEST_METHOD') && filter_input(INPUT_POST,$this->_formId,FILTER_SANITIZE_STRING)==1;
     }
 
@@ -255,7 +255,7 @@ class Form
         if(!array_key_exists($fieldName,$this->_fields)){
             throw new Error("43.4 __get() ne peut pas trouve $fieldName dans _fields");
         }
-        return  $this->_fields[$fieldName];
+        return  $this->_fields[$fieldName]->value;
     }
 
 //    public function __set($fieldName){

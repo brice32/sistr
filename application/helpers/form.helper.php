@@ -20,7 +20,8 @@ abstract class FormHelper
                 <?php $form->fLabel($fieldName) ?> </label>
             <div class="col-sm-10">
                 <input type='<?php echo $type; ?>' class="form-control" id="<?php echo $fieldName; ?>"
-                       name="<?php echo $fieldName; ?>" placeholder="<?php echo ucfirst($fieldName); ?>">
+                       name="<?php echo $fieldName; ?>" placeholder="<?php echo ucfirst($fieldName); ?> "
+                       value=<?php echo $form->getField($fieldName)->value; ?>>
                 <?php $form->fMessages($fieldName); ?>
             </div>
         </div>
