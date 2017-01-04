@@ -73,7 +73,12 @@ class UtilisateurController extends \F3il\Controller
             $mode->mettreAJour($form->getData());
             $nom = $page->formData['nom'];
             $prenom = $page->formData['prenom'];
-            \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+            if(CsrfHelper::checkToken()){
+                Messenger::setMessage('Données de formulaire refusées');
+            }
+            else{
+                \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+            }
             \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
         }
 
@@ -87,6 +92,7 @@ class UtilisateurController extends \F3il\Controller
         } else {
             $model = new UtilisateursModel();
             $model->supprimer(filter_input(INPUT_POST, 'id'));
+            CsrfHelper::getToken();
             \F3il\Messenger::setMessage("Suppression effectuée");
             \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
 
@@ -117,7 +123,12 @@ class UtilisateurController extends \F3il\Controller
             $mode->creer($form->getData());
             $nom = $page->formData['nom'];
             $prenom = $page->formData['prenom'];
-            \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+            if(CsrfHelper::checkToken()){
+                Messenger::setMessage('Données de formulaire refusées');
+            }
+            else{
+                \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");
+            }
             \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
         }
 
