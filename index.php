@@ -9,5 +9,5 @@ require_once '/framework/f3il.php';
 //$UC= new UtilisateurController;
 //$UC->listerAction();
 $app = \F3il\Application::getInstance(APPLICATION_PATH . '\configuration.ini');
-$app->setDefaultControllerName("utilisateur");
+$app->setDefaultControllerName("index");
 $app->run();
