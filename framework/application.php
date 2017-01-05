@@ -99,4 +99,19 @@ class Application
             $this->defaultControllerName=$controllerName;
 
     }
+
+    public function getControllerName(){
+        return $this->controllerName;
+    }
+
+    public function getActionName(){
+        return $this->actionName;
+    }
+
+    public function getCurrentLocation(){
+        $location = array();
+        $location['controller']=$this->getControllerName();
+        $location['action']=$this->getActionName();
+        return $location;
+    }
 }

@@ -9,7 +9,7 @@ namespace Sistr;
 defined('SISTR') or die('Acces interdit');
 //$this->addStyleSheet();
 ?>
-<div class="col-md-9">
+
     <div class="container">
         <div>
             <h1>Liste De Evenement</h1>
@@ -112,6 +112,6 @@ defined('SISTR') or die('Acces interdit');
         </div>
 
     </div>
-</div>
+
 
 

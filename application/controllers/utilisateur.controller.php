@@ -19,7 +19,7 @@ class UtilisateurController extends \F3il\Controller
     {
 //        $conf = \F3il\Configuration::getInstance();
         $page = \F3il\Page::getInstance();
-        $page->setTemplate("template-bt");
+        $page->setTemplate("application");
         $page->setView("utilisateur-liste");
 //        $page->titre = 'lister des utilisateurs';
 
@@ -37,7 +37,7 @@ class UtilisateurController extends \F3il\Controller
     {
         $page = \F3il\Page::getInstance();
         $page->setPageTitle('Modifier utilisateur');
-        $page->setTemplate("template-bt");
+        $page->setTemplate("application");
         $page->setView("utilisateur-form");
         $form = new UtilisateurForm("?controller=utilisateur&action=editer");
         //"?controller=utilisateur&action=creer"
@@ -104,7 +104,7 @@ class UtilisateurController extends \F3il\Controller
 //        $_POST['id']=0;
         $page = \F3il\Page::getInstance();
         $page->setPageTitle("Nouvel utilisateur");
-        $page->setTemplate("template-bt");
+        $page->setTemplate("application");
         $page->setView("utilisateur-form");
         $form = new UtilisateurForm("?controller=utilisateur&action=creer");
         $form->getField('id')->value = 0;
