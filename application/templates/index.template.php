@@ -157,5 +157,10 @@ and open the template in the editor.
     </div>
     <div class="clear"></div>
 </footer>
+<pre><?php
+    //        print_r($this->formData);
+    print_r($this->formulaire);
+    print_r($_POST);
+    ?></pre>
 </body>
 </html>

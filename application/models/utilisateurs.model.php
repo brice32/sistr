@@ -5,7 +5,7 @@ use F3il\Database;
 
 defined('SISTR') or die('Acces interdit');
 
-class UtilisateursModel
+class UtilisateursModel implements \F3il\AuthenticationInterface
 {
     public function lister()
     {
@@ -136,6 +136,70 @@ class UtilisateursModel
         } catch (\PDOException $ex) {
             throw new \F3il\Error("Erreur SQL " . $ex->getMessage());
         }
+    }
+
+    public function auth_getLoginKey() {
+//        $db = \F3il\Database::getInstance();
+//
+//        $sql = "SELECT login FROM utilisateurs";
+//        $req = $db->prepare($sql);
+//        try {
+//            $req->execute();
+//        } catch (\PDOException $ex) {
+//            throw new \F3il\Error("Erreur SQL ".$ex->getMessage());
+//        }
+//
+//        return $req->fetchAll(\PDO::FETCH_ASSOC);
+        return "login";
+    }
+
+    public function auth_getPasswordKey() {
+//        $db = \F3il\Database::getInstance();
+//
+//        $sql = "SELECT motdepasse FROM utilisateurs";
+//        $req = $db->prepare($sql);
+//        try {
+//            $req->execute();
+//        } catch (\PDOException $ex) {
+//            throw new \F3il\Error("Erreur SQL ".$ex->getMessage());
+//        }
+//
+//        return $req->fetchAll(\PDO::FETCH_ASSOC);
+        return "motdepasse";
+    }
+
+    public function auth_getUserById($id) {
+        return $this->lister($id);
+    }
+
+    public function auth_getUserByLogin($login) {
+        $db = \F3il\Database::getInstance();
+
+        $sql = "SELECT * FROM `utilisateurs` WHERE id = :id";
+
+        try {
+            $req = $db->prepare($sql);
+            $req->bindValue(':id', $login);
+            $req->execute();
+        } catch (\PDOException $ex) {
+            die('Erreur SQL ' . $ex->getMessage());
+        }
+        return $req->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function auth_getUserIdKey() {
+//        $db = \F3il\Database::getInstance();
+//
+//        $sql = "SELECT id FROM utilisateurs";
+//        $req = $db->prepare($sql);
+//        try {
+//            $req->execute();
+//        } catch (\PDOException $ex) {
+//            throw new \F3il\Error("Erreur SQL ".$ex->getMessage());
+//        }
+//
+//        return $req->fetchAll(\PDO::FETCH_ASSOC);
+        return "id";
     }
 
 }

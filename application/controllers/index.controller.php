@@ -25,12 +25,18 @@ class IndexController extends \F3il\Controller{
         $form=new LoginForm("?controller=index&action=login");
         $form->getHtmlFile();
         $page->formulaire=$form;
+
         if(!$form->isSubmitted()){
             return;
         }
-        $form->loadData($_POST);
+        $form->loadData(INPUT_POST);
+
         if(!$form->isValid()){
             \F3il\Messenger::setMessage("Login / mot de passe incorrect");
+
+            if ($message = Messenger::getMessage()) {
+                \F3il\Messages::addMessage($message, 0);
+            }
             return;
         }
     }

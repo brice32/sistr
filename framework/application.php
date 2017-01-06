@@ -114,4 +114,8 @@ class Application
         $location['action']=$this->getActionName();
         return $location;
     }
+
+    public function setAuthenticationDelegate($className){
+
+    }
 }

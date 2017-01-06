@@ -8,6 +8,7 @@
             <file>file:/C:/xampp/htdocs/sistr/framework/configuration.php</file>
             <file>file:/C:/xampp/htdocs/sistr/framework/error.php</file>
             <file>file:/C:/xampp/htdocs/sistr/framework/application.php</file>
+            <file>file:/C:/xampp/htdocs/sistr/application/models/utilisateurs.model.php</file>
             <file>file:/C:/xampp/htdocs/sistr/index.php</file>
         </group>
     </open-files>

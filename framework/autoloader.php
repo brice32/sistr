@@ -79,7 +79,7 @@ class AutoLoader {
 
         require_once $filename;
 
-        if (!class_exists($classname))
+       if (!class_exists($classname)&&!interface_exists($classname))
             throw new AutoloaderError('Classe ' . $classname . ' non trouvée dans le fichier ' . $filename, $classname);
     }
 
