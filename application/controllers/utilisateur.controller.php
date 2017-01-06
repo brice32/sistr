@@ -124,7 +124,7 @@ class UtilisateurController extends \F3il\Controller
             $nom = $page->formData['nom'];
             $prenom = $page->formData['prenom'];
             if(CsrfHelper::checkToken()){
-                Messenger::setMessage('Données de formulaire refusées');
+                \F3il\Messenger::setMessage('Données de formulaire refusées');
             }
             else{
                 \F3il\Messenger::setMessage("L'utilisateur $nom $prenom a bien ete enregistre.");

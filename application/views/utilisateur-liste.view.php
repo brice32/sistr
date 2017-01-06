@@ -7,8 +7,10 @@
  */
 namespace Sistr;
 defined("SISTR") or die("Acess interdit utilisateur-liste");
+\F3il\Messages::setMessageRenderer('\Sistr\MessagesHelper::messagesRenderer');
 ?>
 <h2>Liste des utilisateurs</h2>
+[%MESSAGES%]
 <div id="datagrid-commands">
     <a href="?controller=utilisateur&action=creer">
         <button class="btn btn-primary">Nouvel Utilisateur</button>
@@ -78,3 +80,4 @@ defined("SISTR") or die("Acess interdit utilisateur-liste");
 <!--    <input type="hidden" name="controller" value="utilisateur"/>-->
 <!--    <input type="hidden" name="action" value="editer"/>-->
 </form>
+

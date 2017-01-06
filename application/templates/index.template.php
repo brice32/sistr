@@ -7,6 +7,7 @@
  */
 namespace Sistr;
 defined('SISTR') or die('Acces interdit');
+\F3il\Messages::setMessageRenderer('\Sistr\MessagesHelper::messagesRenderer');
 ?>
 <!DOCTYPE html>
 <!--
@@ -35,11 +36,15 @@ and open the template in the editor.
             </a>
         </h1>
         <div id="connexion">
-            <form action="#">
-                <input type="text" id="login" name="login" placeholder="Votre login">
-                <input type="password" id="mot-de-passe" name="mot-de-passe" placeholder="Votre mot de passe">
-                <button type="button">Se connecter</button>
-            </form>
+<!--            <form action="#">-->
+<!--                <input type="text" id="login" name="login" placeholder="Votre login">-->
+<!--                <input type="password" id="mot-de-passe" name="mot-de-passe" placeholder="Votre mot de passe">-->
+<!--                <button type="button">Se connecter</button>-->
+<!--            </form>-->
+            <?php $this->formulaire->render(); ?>
+            <div id="validation-messages">
+                [%MESSAGES%]
+            </div>
         </div>
     </div>
 </header>

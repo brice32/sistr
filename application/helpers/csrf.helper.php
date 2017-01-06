@@ -30,8 +30,8 @@ class CsrfHelper{
 
     public static function checkToken(){
         if(isset($_SESSION[self::SESSION_KEY])){
-            if(filter_input($_POST,$_SESSION[self::SESSION_KEY]==='0')){
-
+            if(filter_input(INPUT_POST,$_SESSION[self::SESSION_KEY]==='0')){
+                return true;
             }else{
                 return false;
             }
@@ -39,6 +39,6 @@ class CsrfHelper{
         else{
             return false;
         }
-        return true;
+
     }
 }
