@@ -57,7 +57,7 @@ class Messages{
     public static function defaultRenderer(){
 //        self::addMessage("lalala",1);
 //        self::addMessage("blabla",0);
-        ob_start();
+//        ob_start();
         echo '<div>';
         foreach (self::$_messages as $message){
             echo "<p>$message</p>";

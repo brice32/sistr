@@ -116,6 +116,8 @@ class Application
     }
 
     public function setAuthenticationDelegate($className){
-
+        $className='\Sistr\\'.$className;
+        $mode=new $className();
+        Authentication::getInstance($mode);
     }
 }

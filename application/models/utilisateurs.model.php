@@ -175,11 +175,11 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
     public function auth_getUserByLogin($login) {
         $db = \F3il\Database::getInstance();
 
-        $sql = "SELECT * FROM `utilisateurs` WHERE id = :id";
+        $sql = "SELECT * FROM `utilisateurs` WHERE login = :login";
 
         try {
             $req = $db->prepare($sql);
-            $req->bindValue(':id', $login);
+            $req->bindValue(':login', $login);
             $req->execute();
         } catch (\PDOException $ex) {
             die('Erreur SQL ' . $ex->getMessage());

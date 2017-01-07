@@ -72,12 +72,14 @@ class Authentication {
      */
     public function login($login,$password) {
         $this->user = $this->authenticationModel->auth_getUserByLogin($login);
+//        echo "return false $login,$password";
         if(!$this->user) return false;
 
         if(!$this->checkAuthenticationKeys($this->user)){
             throw new Error('Modele Authentification');
         }
 
+//        echo "$this->user[$this->passwordKey] $password";
         if($this->user[$this->passwordKey]!=$password) return false;
 
         return true;

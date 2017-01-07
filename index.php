@@ -10,4 +10,5 @@ require_once '/framework/f3il.php';
 //$UC->listerAction();
 $app = \F3il\Application::getInstance(APPLICATION_PATH . '\configuration.ini');
 $app->setDefaultControllerName("index");
+$app->setAuthenticationDelegate("UtilisateursModel");
 $app->run();

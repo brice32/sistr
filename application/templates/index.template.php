@@ -8,6 +8,7 @@
 namespace Sistr;
 defined('SISTR') or die('Acces interdit');
 \F3il\Messages::setMessageRenderer('\Sistr\MessagesHelper::messagesRenderer');
+
 ?>
 <!DOCTYPE html>
 <!--
