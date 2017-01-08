@@ -2,6 +2,7 @@
 namespace Sistr;
 
 use F3il\Database;
+use F3il\Error;
 
 defined('SISTR') or die('Acces interdit');
 
@@ -202,5 +203,15 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
         return "id";
     }
 
+    public function auth_getSalt($user)
+    {
+        // TODO: Implement auth_getSalt() method.
+        if(array_key_exists('creation',$user)){
+            return $user['creation'];
+        }
+        else{
+            throw new Error("Probleme dans utilisateurs.model auth_getSalt. ");
+        }
+    }
 }
 

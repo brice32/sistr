@@ -80,9 +80,12 @@ class Authentication {
         }
 
 //        echo "$this->user[$this->passwordKey] $password";
-        if($this->user[$this->passwordKey]!=$password) return false;
+        if($this->user[$this->passwordKey]!=$this->hash($password,$this->authenticationModel->auth_getSalt($this->authenticationModel->auth_getUserByLogin($login)))) return false;
 
         return true;
     }
-    
+
+    public function hash($password,$salt){
+        return hash('sha256',hash('sha256',$salt).$password);
+    }
 }
