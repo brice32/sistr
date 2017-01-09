@@ -26,7 +26,7 @@ class Authentication {
         $this->authenticationModel=$model;
         $this->loginKey=$model->auth_getLoginKey();
         $this->passwordKey=$model->auth_getPasswordKey();
-        $this->idKey=$model->auth_getPasswordKey();
+        $this->idKey=$model->auth_getUserIdKey();
     }
     
     
@@ -81,11 +81,17 @@ class Authentication {
 
 //        echo "$this->user[$this->passwordKey] $password";
         if($this->user[$this->passwordKey]!=$this->hash($password,$this->authenticationModel->auth_getSalt($this->authenticationModel->auth_getUserByLogin($login)))) return false;
-
+        $_SESSION[self::SESSION_KEY]=$this->user[$this->idKey];
         return true;
     }
 
     public function hash($password,$salt){
         return hash('sha256',hash('sha256',$salt).$password);
     }
+
+    public function logout(){
+        $this->user=null;
+        unset($_SESSION[self::SESSION_KEY]);
+    }
+
 }

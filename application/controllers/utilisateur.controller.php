@@ -134,4 +134,10 @@ class UtilisateurController extends \F3il\Controller
 
 //        if($mode->loginExistant($page->formData['login']))
     }
+
+    public function deconnecterAction(){
+        $authentication=\F3il\Authentication::getInstance();
+        $authentication->logout();
+        \F3il\HttpHelper::redirect('?controller=suivi');
+    }
 }

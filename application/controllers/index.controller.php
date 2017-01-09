@@ -49,7 +49,7 @@ class IndexController extends \F3il\Controller{
             return;
         }
         echo "Authentification reussie";
-
+        \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
     }
 
 

@@ -61,7 +61,7 @@ and open the template in the editor.
                 </ul>
             </div>
             <div class="nav navbar-nav navbar-right ">
-                <button type="submit" class="btn btn-link"><a href="#"> Se Déconnecter</a></button>
+                <button type="submit" class="btn btn-link"><a href="?controller=utilisateur&action=deconnecter"> Se Déconnecter</a></button>
             </div>
 
         </div>
