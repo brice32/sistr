@@ -15,6 +15,7 @@ class IndexController extends \F3il\Controller{
 
     public function __construct($actionName = 'index')
     {
+        $this->redirectIfAuthenticated('?controller=suivi&action=lister');
         $this->setDefaultActionName($actionName);
     }
 
@@ -49,7 +50,7 @@ class IndexController extends \F3il\Controller{
             return;
         }
         echo "Authentification reussie";
-        \F3il\HttpHelper::redirect('?controller=utilisateur&action=lister');
+
     }
 
 

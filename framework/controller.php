@@ -30,4 +30,17 @@ abstract class Controller{
             return $this->defaultActionName;
     }
 
+    public function redirectIfAuthenticated($redirect){
+        $authentication=\F3il\Authentication::getInstance();
+        if($authentication->isLoggedIn()){
+            \F3il\HttpHelper::redirect($redirect);
+        }
+    }
+
+    public function redirectIfUnauthenticated($redirect){
+        $authentication=\F3il\Authentication::getInstance();
+        if(!$authentication->isLoggedIn()){
+            \F3il\HttpHelper::redirect($redirect);
+        }
+    }
 }

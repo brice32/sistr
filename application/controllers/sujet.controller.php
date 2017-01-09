@@ -12,6 +12,7 @@ class SujetController extends \F3il\Controller
 {
     public function __construct($actionName = 'lister')
     {
+        $this->redirectIfUnauthenticated('?controller=index');
         $this->setDefaultActionName($actionName);
     }
 

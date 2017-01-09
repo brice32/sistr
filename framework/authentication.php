@@ -94,4 +94,8 @@ class Authentication {
         unset($_SESSION[self::SESSION_KEY]);
     }
 
+    public function isLoggedIn(){
+        return isset($_SESSION[self::SESSION_KEY]);
+    }
+
 }
