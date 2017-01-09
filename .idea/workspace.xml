@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82a26aa9-f7ad-404c-bd9d-266c477b25de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.controller.php" afterPath="$PROJECT_DIR$/application/controllers/index.controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/suivi.controller.php" afterPath="$PROJECT_DIR$/application/controllers/suivi.controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/sujet.controller.php" afterPath="$PROJECT_DIR$/application/controllers/sujet.controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/utilisateur.controller.php" afterPath="$PROJECT_DIR$/application/controllers/utilisateur.controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/authentication.php" afterPath="$PROJECT_DIR$/framework/authentication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/controller.php" afterPath="$PROJECT_DIR$/framework/controller.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,12 +51,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.controller.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/index.controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="73" lean-forward="false" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
-              <folding />
+            <state relative-caret-position="414">
+              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <element signature="e#105#125#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,21 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue2.view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/vue2.view.php">
+      <file leaf-file-name="authentication.interface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/interfaces/authentication.interface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+            <state relative-caret-position="471">
+              <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="authentication.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/framework/authentication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="514">
+              <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -210,12 +207,12 @@
         <option value="$PROJECT_DIR$/application/models/utilisateurs.model.php" />
         <option value="$PROJECT_DIR$/application/views/vue2.view.php" />
         <option value="$PROJECT_DIR$/application/templates/application.template.php" />
-        <option value="$PROJECT_DIR$/framework/authentication.php" />
         <option value="$PROJECT_DIR$/framework/controller.php" />
         <option value="$PROJECT_DIR$/application/controllers/utilisateur.controller.php" />
         <option value="$PROJECT_DIR$/application/controllers/sujet.controller.php" />
         <option value="$PROJECT_DIR$/application/controllers/suivi.controller.php" />
         <option value="$PROJECT_DIR$/application/controllers/index.controller.php" />
+        <option value="$PROJECT_DIR$/framework/authentication.php" />
       </list>
     </option>
   </component>
@@ -645,12 +642,12 @@
       <workItem from="1483705100967" duration="10388000" />
       <workItem from="1483723898534" duration="11869000" />
       <workItem from="1483805901878" duration="3660000" />
-      <workItem from="1483953208537" duration="5570000" />
+      <workItem from="1483953208537" duration="6312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255501000" />
+    <option name="totallyTimeSpent" value="256243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -964,14 +961,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/interfaces/authentication.delegate.php" />
-    <entry file="file://$PROJECT_DIR$/framework/interfaces/authentication.interface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/templates/template-bt.template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
@@ -1038,14 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework/authentication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1080,8 +1061,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/index.controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="73" lean-forward="false" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+        <state relative-caret-position="414">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="e#105#125#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/interfaces/authentication.interface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="45" column="1" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/authentication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="114" column="9" lean-forward="false" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
           <folding />
         </state>
       </provider>

@@ -27,6 +27,10 @@ class Authentication {
         $this->loginKey=$model->auth_getLoginKey();
         $this->passwordKey=$model->auth_getPasswordKey();
         $this->idKey=$model->auth_getUserIdKey();
+        if(Authentication::isLoggedIn()){
+            $this->user=$this->authenticationModel->auth_getUserById($_SESSION[self::SESSION_KEY]);
+            unset($this->user[$this->idKey]);
+        }
     }
     
     
@@ -97,5 +101,20 @@ class Authentication {
     public function isLoggedIn(){
         return isset($_SESSION[self::SESSION_KEY]);
     }
+
+    public function getLoggedUser(){
+        if(!$this->isLoggedIn()){
+            throw new Error("aucun utilisateur n'est connecté.");
+        }
+        return $this->user;
+    }
+
+    public function getLoggedUserId(){
+        if(!$this->isLoggedIn()){
+            throw new Error("aucun utilisateur n'est connecté.");
+        }
+        return $_SESSION[self::SESSION_KEY];
+    }
+
 
 }

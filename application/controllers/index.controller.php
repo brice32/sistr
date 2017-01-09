@@ -6,6 +6,7 @@
  * Time: 13:34
  */
 namespace Sistr;
+use F3il\HttpHelper;
 use F3il\Messenger;
 use F3il\Page;
 
@@ -50,7 +51,7 @@ class IndexController extends \F3il\Controller{
             return;
         }
         echo "Authentification reussie";
-
+//        HttpHelper::redirect('?controller=index');
     }
 
 
