@@ -178,7 +178,7 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
     }
 
     public function auth_getUserById($id) {
-        return $this->lister($id);
+        return $this->lire($id);
     }
 
     public function auth_getUserByLogin($login) {

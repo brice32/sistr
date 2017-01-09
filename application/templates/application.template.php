@@ -6,7 +6,11 @@
  * Time: 14:47
  */
 namespace Sistr;
+use F3il\AuthenticationInterface;
+
 defined('SISTR') or die('Acces interdit');
+$authentication=\F3il\Authentication::getInstance();
+$user=$authentication->getLoggedUser();
 ?>
 <!DOCTYPE html>
 <!--
@@ -57,7 +61,7 @@ and open the template in the editor.
             </div>
             <div>
                 <ul class=" nav navbar-nav  ">
-                    <li><a>hello</a></li>
+                    <li><a><?php echo $user['nom'].".".$user['prenom'] ;?></a></li>
                 </ul>
             </div>
             <div class="nav navbar-nav navbar-right ">
