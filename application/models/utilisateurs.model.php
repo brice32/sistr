@@ -46,12 +46,17 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
             . ", email = :email"
             . ", login = :login"
             . ", motdepasse = :motdepasse"
-            . ", creation = '" . date('Y-m-d H:i:s') . "'";
+            . ", creation = :creation";
         $req = $db->prepare($sql);
         $req->bindValue(':nom', $data['nom']);
         $req->bindValue(':prenom', $data['prenom']);
         $req->bindValue(':email', $data['email']);
         $req->bindValue(':login', $data['login']);
+        $data['creation']=date('Y-m-d H:i:s');
+        $req->bindValue(':creation',$data['creation']);
+        $authentication=\F3il\Authentication::getInstance();
+//        $data['motdepasse'] = $this->hash($data['motdepasse'],$this->auth_getSalt($this->auth_getUserByLogin($data['login'])));
+        $data['motdepasse'] = $authentication->hash($data['motdepasse'],$data['creation']);
         $req->bindValue(':motdepasse', $data['motdepasse']);
         try {
             $req->execute();
@@ -129,7 +134,10 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
             $req->bindValue(':login', $data['login']);
 
             if (!empty($data['motdepasse'])) {
-                $req->bindValue(':creation', date('Y-m-d H:i:s'));
+                $data['motdepasse']=date('Y-m-d H:i:s');
+                $req->bindValue(':creation', $data['motdepasse']);
+                $authentication=\F3il\Authentication::getInstance();
+                $data['motdepasse'] = $authentication->hash($data['motdepasse'],$data['creation']);
                 $req->bindValue(':motdepasse', $data['motdepasse']);
             }
             $req->bindValue(':id', $data['id']);
