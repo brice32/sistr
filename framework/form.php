@@ -175,10 +175,10 @@ class Form
             if (in_array($field->name, $this->_missingFields)) {
                 $valid = false;
             }
-            if ($field->value === null) {
-                $valid = false;
-                $field->addMessage($this->missingFieldMessageRenderer($field));
-            }
+//            if ($field->value === null) {
+//                $valid = false;
+//                $field->addMessage($this->missingFieldMessageRenderer($field));
+//            }
             if (trim($field->value) != null || $field->required) {
                 $fieldName = $field->name;
                 $validator = str_replace('-', '', lcfirst(ucwords($fieldName, '-'))) . 'Validator';

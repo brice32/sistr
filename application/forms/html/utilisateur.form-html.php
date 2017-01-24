@@ -18,7 +18,7 @@ defined('SISTR') or die('Acces interdit');
 <!--        </div>-->
 <!--    </div>-->
     <?php CsrfHelper::csrf();?>
-<!--    --><?php //FormHelper::input($this,"id","text")?>
+    <?php FormHelper::input($this,"id","hidden")?>
 <!--    <div class="form-group">-->
 <!--        <label for="nom" class="col-sm-2 control-label">--><?php //$this->fName('nom');
 //            $this->fLabel('nom') ?><!--: </label>-->

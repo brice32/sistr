@@ -116,7 +116,7 @@ class Application
     }
 
     public function setAuthenticationDelegate($className){
-        $className='\Sistr\\'.$className;
+        $className='\\'.APPLICATION_NAMESPACE.'\\'.$className;
         $mode=new $className();
         Authentication::getInstance($mode);
     }

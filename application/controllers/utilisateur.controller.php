@@ -43,8 +43,8 @@ class UtilisateurController extends \F3il\Controller
         $form = new UtilisateurForm("?controller=utilisateur&action=editer");
         //"?controller=utilisateur&action=creer"
         $form->getHtmlFile();
-
         $id = $_POST["id"];
+        $form->getField('id')->value = $id;
 //        unset($_POST['id']);
 
 //        if (!array_key_exists("motdepasse", $_POST)) {
@@ -65,10 +65,10 @@ class UtilisateurController extends \F3il\Controller
         else{
             $page->formulaire = $form;
             $form->loadData(INPUT_POST);
-//            if (!$form->isValid()) {
+            if (!$form->isValid()) {
 //                \F3il\Messages::addMessage("Le formulaire n'est pas valide", 2);
-//                return;
-//            }
+                return;
+            }
             $page->formData = $form->getData();
             $mode = new UtilisateursModel();
             $mode->mettreAJour($form->getData());
