@@ -54,7 +54,7 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
         $req->bindValue(':login', $data['login']);
         $data['creation']=date('Y-m-d H:i:s');
         $req->bindValue(':creation',$data['creation']);
-        $authentication=\F3il\Authentication::getInstance();
+        $authentication=\F3il\Authentication::getInstance($this);
 //        $data['motdepasse'] = $this->hash($data['motdepasse'],$this->auth_getSalt($this->auth_getUserByLogin($data['login'])));
         $data['motdepasse'] = $authentication->hash($data['motdepasse'],$data['creation']);
         $req->bindValue(':motdepasse', $data['motdepasse']);
@@ -136,7 +136,7 @@ class UtilisateursModel implements \F3il\AuthenticationInterface
             if (!empty($data['motdepasse'])) {
                 $data['motdepasse']=date('Y-m-d H:i:s');
                 $req->bindValue(':creation', $data['motdepasse']);
-                $authentication=\F3il\Authentication::getInstance();
+                $authentication=\F3il\Authentication::getInstance($this);
                 $data['motdepasse'] = $authentication->hash($data['motdepasse'],$data['creation']);
                 $req->bindValue(':motdepasse', $data['motdepasse']);
             }
